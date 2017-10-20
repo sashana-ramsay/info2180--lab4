@@ -3,6 +3,7 @@ function eventHandler() {
 	var otherBoundaries = document.querySelectorAll(".boundary");
 	var end = document.getElementById("end");
 	var start = document.getElementById("start");
+	var status = document.getElementById("status");
 
 	boundary1.onmouseover = function(){
 		boundary1.classList.add("youlose");
@@ -18,13 +19,14 @@ function eventHandler() {
 
 	end.onmouseover = function(){
 		if (boundary1.getAttribute("class") == "boundary youlose") {
-			alert("YOU LOSE!");
+			status.innerHTML = "YOU LOSE!";
 		} else {
-			alert("YOU WIN!");
+			status.innerHTML = "YOU WIN!";
 		}
 	}
 
 	start.onclick = function(){
+		status.innerHTML = '';
 		for (var i = 0; i< otherBoundaries.length-1; i++) {
 			otherBoundaries[i].setAttribute("class","boundary");
 		}
