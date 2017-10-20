@@ -4,6 +4,7 @@ function eventHandler() {
 	var end = document.getElementById("end");
 	var start = document.getElementById("start");
 	var status = document.getElementById("status");
+	var maze = document.getElementById("maze");
 
 	boundary1.onmouseover = function(){
 		boundary1.classList.add("youlose");
@@ -29,6 +30,11 @@ function eventHandler() {
 		status.innerHTML = '';
 		for (var i = 0; i< otherBoundaries.length-1; i++) {
 			otherBoundaries[i].setAttribute("class","boundary");
+		}
+		maze.onmouseleave = function(){
+			for (var i = 0; i< otherBoundaries.length-1; i++) {
+				otherBoundaries[i].classList.add("youlose");
+			}
 		}
 	}
 }
